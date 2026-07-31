@@ -170,6 +170,57 @@ ul {
     justify-content: space-between;
 }
 
+.header-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Language Switcher Pill */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--radius-pill);
+    padding: 3px;
+    gap: 2px;
+    backdrop-filter: blur(12px);
+    transition: all var(--transition-smooth);
+}
+
+.navbar.scrolled .lang-switcher {
+    background: rgba(11, 19, 31, 0.06);
+    border-color: rgba(11, 19, 31, 0.1);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.78rem;
+    color: var(--text-white);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.navbar.scrolled .lang-btn {
+    color: var(--text-main);
+}
+
+.lang-btn:hover {
+    opacity: 0.85;
+}
+
+.lang-btn.active {
+    background: var(--dak-orange) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(245, 130, 32, 0.4);
+}
+
 .logo-brand {
     display: flex;
     align-items: center;
