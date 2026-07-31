@@ -69,9 +69,9 @@ const translations = {
         modal_opt_comercial: "Espaço Comercial",
         modal_label_notes: "Descrição breve do projeto (opcional)",
         modal_placeholder_notes: "Local da obra, área aproximada em m², prazos...",
-        modal_btn_submit: "Enviar Pedido de Orçamento →",
+        modal_btn_submit: "Enviar Pedido via WhatsApp →",
         modal_success_title: "Obrigado pelo seu contacto!",
-        modal_success_desc: "A equipa técnica DAK Construction irá analisar os seus dados e entrará em contacto muito em breve.",
+        modal_success_desc: "A mensagem foi encaminhada para o nosso WhatsApp. Responderemos em breve!",
         modal_success_close: "Fechar"
     },
     en: {
@@ -142,9 +142,9 @@ const translations = {
         modal_opt_comercial: "Commercial Space",
         modal_label_notes: "Brief project description (optional)",
         modal_placeholder_notes: "Location, approximate area in m², deadlines...",
-        modal_btn_submit: "Send Quote Request →",
+        modal_btn_submit: "Send Quote via WhatsApp →",
         modal_success_title: "Thank you for reaching out!",
-        modal_success_desc: "The DAK Construction engineering team will review your details and contact you shortly.",
+        modal_success_desc: "Your request has been forwarded to our WhatsApp. We will reply shortly!",
         modal_success_close: "Close"
     },
     ru: {
@@ -215,9 +215,9 @@ const translations = {
         modal_opt_comercial: "Коммерческое помещение",
         modal_label_notes: "Краткое описание проекта (опционально)",
         modal_placeholder_notes: "Локация объекта, примерная площадь в м², желаемые сроки...",
-        modal_btn_submit: "Отправить запрос сметы →",
+        modal_btn_submit: "Отправить через WhatsApp →",
         modal_success_title: "Спасибо за обращение!",
-        modal_success_desc: "Инженерная команда DAK Construction изучит ваши данные и свяжется с вами в ближайшее время.",
+        modal_success_desc: "Заявка сформирована и перенаправлена в ваш WhatsApp!",
         modal_success_close: "Закрыть"
     }
 };
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setLanguage(currentLang);
 
-    // 4. Lead Modal Handling & Real Form Submissions (Web3Forms API Integration)
+    // 4. Lead Modal Handling & Direct WhatsApp Integration (+351 931 312 136)
     const modalBackdrop = document.getElementById('modalBackdrop');
     const modalClose = document.getElementById('modalClose');
     const openModalBtns = document.querySelectorAll('.open-modal-btn');
@@ -345,57 +345,40 @@ document.addEventListener('DOMContentLoaded', () => {
         closeSuccessBtn.addEventListener('click', closeModal);
     }
 
-    // Real Form Submission Engine
+    // Direct WhatsApp Submission Engine
     if (leadForm) {
-        leadForm.addEventListener('submit', async (e) => {
+        leadForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const submitBtn = document.getElementById('modalSubmitBtn');
-            const btnSpan = submitBtn.querySelector('span');
-            const originalText = btnSpan ? btnSpan.innerHTML : submitBtn.innerHTML;
-            
-            if (btnSpan) {
-                btnSpan.innerHTML = currentLang === 'ru' ? 'Отправка...' : (currentLang === 'en' ? 'Sending...' : 'A enviar...');
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const serviceSelect = document.getElementById('serviceType');
+            const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const notes = document.getElementById('notes').value.trim();
+
+            const targetPhoneNumber = "351931312136"; // DAK WhatsApp Number
+
+            // Format WhatsApp Message
+            let message = `✦ *NOVO PEDIDO DE ORÇAMENTO — DAK CONSTRUCTION*\n\n`;
+            message += `👤 *Nome:* ${name}\n`;
+            message += `📞 *Telemóvel:* ${phone}\n`;
+            message += `📧 *E-mail:* ${email}\n`;
+            message += `🏗 *Tipo de Obra:* ${serviceText}\n`;
+            if (notes) {
+                message += `📝 *Descrição:* ${notes}\n`;
             }
-            submitBtn.disabled = true;
 
-            const formData = new FormData(leadForm);
-            
-            // Web3Forms API endpoint (Replace access_key with your Web3Forms key if desired)
-            // If access_key is set to web3forms, it delivers instant emails to target inbox!
-            const web3FormsKey = window.WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
-            formData.append("access_key", web3FormsKey);
-            formData.append("subject", "✦ Новый запрос сметы DAK Construction");
-            formData.append("from_name", "DAK Construction Website");
+            // Generate WhatsApp URL
+            const whatsappUrl = `https://wa.me/${targetPhoneNumber}?text=${encodeURIComponent(message)}`;
 
-            try {
-                // If Web3Forms key is default placeholder, simulate success or send via API
-                let success = true;
+            // Open WhatsApp in new tab/app
+            window.open(whatsappUrl, '_blank');
 
-                if (web3FormsKey !== "YOUR_WEB3FORMS_ACCESS_KEY") {
-                    const response = await fetch("https://api.web3forms.com/submit", {
-                        method: "POST",
-                        body: formData
-                    });
-                    const data = await response.json();
-                    success = data.success;
-                }
-
-                if (success) {
-                    leadForm.style.display = 'none';
-                    if (formSuccessMsg) {
-                        formSuccessMsg.classList.add('active');
-                    }
-                }
-            } catch (err) {
-                console.error('Form submission error:', err);
-                leadForm.style.display = 'none';
-                if (formSuccessMsg) {
-                    formSuccessMsg.classList.add('active');
-                }
-            } finally {
-                if (btnSpan) btnSpan.innerHTML = originalText;
-                submitBtn.disabled = false;
+            // Show success screen in modal
+            leadForm.style.display = 'none';
+            if (formSuccessMsg) {
+                formSuccessMsg.classList.add('active');
             }
         });
     }
