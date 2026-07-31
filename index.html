@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBRA TRANSPARENTE — Construção & Remodelação em Portugal</title>
+    <meta name="description" content="A sua obra do zero ao acabamento. Gestão completa, sem dor de cabeça e com transparência total de custos em Portugal.">
+    
+    <!-- Google Fonts: Syne for Swiss bold headings, Plus Jakarta Sans for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <span class="logo-bold">OBRA</span><span class="logo-light">.PT</span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#hero" class="nav-link active">Início</a>
+                <a href="#beneficios" class="nav-link">Benefícios</a>
+                <a href="#como-funciona" class="nav-link">Como Funciona</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+            </nav>
+
+            <button class="btn btn-pill btn-black open-modal-btn" id="headerCta">
+                Pedir Orçamento <span class="arrow">→</span>
+            </button>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-wrapper">
+            <img src="public/images/hero_bg.png" alt="Construção civil de luxo em Portugal" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-text-block">
+                <div class="hero-tag">✦ CONSTRUÇÃO CIVIL TRANSPARENTE</div>
+                <h1 class="hero-title">CONSTRUÍMOS COM TRANSPARÊNCIA</h1>
+                <p class="hero-subtitle">
+                    A sua obra do zero ao acabamento. Gestão completa, sem dor de cabeça e com a qualidade que você merece.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-pill btn-white open-modal-btn">
+                        Solicitar Orçamento Grátis <span class="arrow">→</span>
+                    </button>
+                    <a href="#beneficios" class="hero-secondary-link">Saber mais sobre o modelo à jorna</a>
+                </div>
+            </div>
+
+            <!-- Floating Cards on Hero -->
+            <div class="hero-floating-cards">
+                <!-- Floating Card 1 -->
+                <div class="floating-card glass-card card-badge">
+                    <div class="card-icon-wrap green-glow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-title">100% Transparente</span>
+                        <span class="card-sub">Preços reais & sem custos ocultos</span>
+                    </div>
+                </div>
+
+                <!-- Floating Card 2 -->
+                <div class="floating-card glass-card card-engineer">
+                    <img src="public/images/engineer_avatar.png" alt="Engenheiro responsável" class="avatar-img">
+                    <div class="card-info">
+                        <span class="card-title">Equipa Especializada</span>
+                        <span class="card-sub">Engenheiros & Técnicos Certificados</span>
+                    </div>
+                    <div class="status-dot" title="Disponível para novos projetos"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Блок Benefícios -->
+    <section class="section beneficios" id="beneficios">
+        <div class="container">
+            <div class="beneficios-grid">
+                <div class="beneficios-header-col">
+                    <span class="section-badge">✦ PORQUÊ NÓS</span>
+                    <h2 class="section-headline-lg">
+                        A sua obra pode custar menos do que imagina. Acreditamos que a transparência é a base de qualquer projeto de sucesso.
+                    </h2>
+                    <p class="section-description">
+                        Não inflacionamos orçamentos com custos ocultos. O nosso modelo de trabalho é simples: trabalhamos por turnos (à jorna), otimizamos o tempo da equipa e garantimos que paga apenas pelo trabalho real executado.
+                    </p>
+                    <div class="action-wrap">
+                        <button class="btn btn-pill btn-black open-modal-btn">
+                            Falar com a equipa <span class="arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="beneficios-cards-col">
+                    <!-- Card 1: Orçamento Justo with Photo -->
+                    <div class="metric-card card-with-photo">
+                        <div class="metric-photo-wrap">
+                            <img src="public/images/concrete_work.png" alt="Processo de construção em concreto" class="metric-img">
+                            <div class="photo-overlay"></div>
+                        </div>
+                        <div class="metric-content">
+                            <div class="metric-tag">Gestão Real</div>
+                            <h3 class="metric-title">Orçamento Justo</h3>
+                            <p class="metric-text">Sem margens desproporcionais. Relatórios claros de materiais e horas de trabalho.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: 0 Surpresas (High contrast dark card) -->
+                    <div class="metric-card card-dark">
+                        <div class="metric-number">01</div>
+                        <div class="metric-content">
+                            <div class="badge-pill">Garantia Técnica</div>
+                            <h3 class="metric-title">0 Surpresas</h3>
+                            <p class="metric-text">Paga o justo pelo trabalho executado. Cronograma rigoroso cumprido à risca.</p>
+                        </div>
+                        <div class="card-footer-stats">
+                            <div class="stat-item">
+                                <span class="stat-val">+120</span>
+                                <span class="stat-lbl">Obras Concluídas</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">100%</span>
+                                <span class="stat-lbl">Cumprimento de Prazos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Блок Serviços e Qualidade -->
+    <section class="section servicos" id="servicos">
+        <div class="container">
+            <div class="section-intro">
+                <span class="section-badge">✦ A NOSSA EXPERIÊNCIA</span>
+                <h2 class="section-title-main">
+                    Executamos todos os tipos de trabalhos na construção civil. Da fundação ao último detalhe de interior.
+                </h2>
+            </div>
+
+            <!-- Big Showcase Image Container -->
+            <div class="showcase-banner">
+                <img src="public/images/services_interior.png" alt="Acabamento de luxo e remodelação de interiores" class="showcase-img">
+                <div class="showcase-gradient-overlay"></div>
+
+                <!-- Two Light Cards Overlaid on bottom of banner -->
+                <div class="showcase-overlay-cards">
+                    <!-- Overlay Card 1 -->
+                    <div class="service-overlay-card">
+                        <div class="service-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                        <div class="service-card-info">
+                            <h3>Construção de Raiz</h3>
+                            <p>Projetos residenciais e comerciais do terreno até à chave na mão com acompanhamento técnico contínuo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Overlay Card 2 -->
+                    <div class="service-overlay-card">
+                        <div class="service-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-1-1 4 4M3 21l9-9m0 0 4-4m-4 4 4 4m-8 0 4-4"/><path d="M15 5l4 4"/></svg>
+                        </div>
+                        <div class="service-card-info">
+                            <h3>Remodelações</h3>
+                            <p>Renovação integral de moradias, apartamentos e espaços comerciais com máxima precisão nos acabamentos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Блок Como Funciona -->
+    <section class="section como-funciona" id="como-funciona">
+        <div class="container">
+            <div class="process-header">
+                <div>
+                    <span class="section-badge">✦ COMO FUNCIONA</span>
+                    <h2 class="section-title">O nosso método em 3 passos transparentes</h2>
+                </div>
+                <p class="process-intro-text">
+                    Entregamos um processo completo, desde o planeamento até à entrega das chaves.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Step 01 (With Image) -->
+                <div class="step-card step-card-featured">
+                    <div class="step-img-container">
+                        <img src="public/images/step_meeting.png" alt="Consulta inicial e planeamento de engenharia" class="step-img">
+                        <span class="step-number-badge">01</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">CONSULTA INICIAL</h3>
+                        <p class="step-desc">
+                            Analisamos as suas necessidades e o local para entender a dimensão do projeto.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                        <div class="step-icon-badge">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h10"/></svg>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">ORÇAMENTO TRANSPARENTE</h3>
+                        <p class="step-desc">
+                            Apresentamos os custos reais dos materiais e da mão de obra (por turnos/à jorna).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                        <div class="step-icon-badge">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5 4 4"/><path d="M13 7 4 16l-1 5 5-1 9-9"/><path d="M18 3.5a2.12 2.12 0 0 1 3 3L18 9l-3-3 3-3.5z"/></svg>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">EXECUÇÃO E ENTREGA</h3>
+                        <p class="step-desc">
+                            Construímos com rigor técnico e entregamos a obra pronta para uso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta-box">
+                <div class="footer-cta-content">
+                    <h2 class="footer-cta-title">Pronto para começar a sua obra?</h2>
+                    <p class="footer-cta-sub">Peça a sua avaliação gratuita hoje e receba uma estimativa sem qualquer compromisso.</p>
+                </div>
+                <button class="btn btn-pill btn-white btn-lg open-modal-btn">
+                    Pedir Orçamento Grátis <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-col brand-col">
+                    <a href="#" class="logo footer-logo">
+                        <span class="logo-bold">OBRA</span><span class="logo-light">.PT</span>
+                    </a>
+                    <p class="footer-brand-desc">
+                        Construção civil e remodelações de alta precisão em Portugal. Transparência técnica, rigor e compromisso com o cliente.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Contactos Directos</h4>
+                    <ul class="footer-contacts">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+351912345678">+351 912 345 678</a>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <a href="mailto:contacto@obratransparente.pt">contacto@obratransparente.pt</a>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            <a href="https://instagram.com" target="_blank" rel="noopener">@obratransparente.pt</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Localização</h4>
+                    <p class="footer-text">
+                        Lisboa & Porto<br>
+                        Portugal
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 OBRA TRANSPARENTE. Todos os direitos reservados.</p>
+                <p class="swiss-credits">Swiss Design Minimalism</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Lead Form Modal -->
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <span class="section-badge">✦ PEDIDO DE ORÇAMENTO</span>
+                <h3>Vamos falar sobre o seu projeto</h3>
+                <p>Preencha os dados e entraremos em contacto em menos de 24h com uma estimativa inicial.</p>
+            </div>
+
+            <form id="leadForm" class="modal-form">
+                <div class="form-group">
+                    <label for="name">Nome completo</label>
+                    <input type="text" id="name" required placeholder="Ex: João Silva">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Telemóvel</label>
+                        <input type="tel" id="phone" required placeholder="+351 9xx xxx xxx">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" required placeholder="joao@exemplo.pt">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceType">Tipo de Obra</label>
+                    <select id="serviceType" required>
+                        <option value="">Selecione uma opção...</option>
+                        <option value="raiz">Construção de Raiz (Moradia / Edifício)</option>
+                        <option value="remodelacao">Remodelação Integral</option>
+                        <option value="parcial">Remodelação Parcial / Acabamentos</option>
+                        <option value="comercial">Espaço Comercial</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Descrição breve do projeto (opcional)</label>
+                    <textarea id="notes" rows="3" placeholder="Local da obra, área aproximada em m², prazos..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-pill btn-black btn-block">
+                    Enviar Pedido de Orçamento →
+                </button>
+            </form>
+
+            <div class="form-success-msg" id="formSuccessMsg">
+                <div class="success-icon">✓</div>
+                <h4>Obrigado pelo seu contacto!</h4>
+                <p>A nossa equipa técnica irá analisar os seus dados e entrará em contacto muito em breve.</p>
+                <button class="btn btn-pill btn-black" id="closeSuccessBtn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
