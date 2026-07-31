@@ -175,26 +175,35 @@ ul {
     align-items: center;
 }
 
+/* Dynamic Logo Color: White on dark Hero, Dark Navy when scrolled */
 .logo-img {
     height: 44px;
     width: auto;
     object-fit: contain;
+    filter: brightness(0) invert(1); /* Pure white logo initially */
+    transition: filter var(--transition-smooth);
+}
+
+.navbar.scrolled .logo-img {
+    filter: none; /* Original dark navy logo when header turns white */
 }
 
 .logo-img-footer {
     height: 48px;
-    filter: brightness(0) invert(1); /* Pure white version for dark footer */
+    filter: brightness(0) invert(1); /* Always white on dark footer */
 }
 
+/* Header Nav Menu: Light text on Hero, Dark text when scrolled */
 .nav-menu {
     display: flex;
     align-items: center;
     gap: 36px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px);
     padding: 8px 28px;
     border-radius: var(--radius-pill);
-    border: 1px solid rgba(11, 19, 31, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-smooth);
 }
 
 .navbar.scrolled .nav-menu {
@@ -206,13 +215,17 @@ ul {
 .nav-link {
     font-size: 0.92rem;
     font-weight: 600;
-    color: var(--text-main);
+    color: var(--text-white);
     transition: color var(--transition-fast);
     position: relative;
 }
 
+.navbar.scrolled .nav-link {
+    color: var(--text-main);
+}
+
 .nav-link:hover, .nav-link.active {
-    color: var(--dak-orange);
+    color: var(--dak-orange) !important;
 }
 
 .nav-link::after {
@@ -230,6 +243,11 @@ ul {
     width: 100%;
 }
 
+.navbar.scrolled #headerCta {
+    background-color: var(--dak-navy);
+    color: var(--text-white);
+}
+
 .mobile-toggle {
     display: none;
     background: none;
@@ -244,8 +262,12 @@ ul {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--text-main);
+    background-color: var(--text-white);
     transition: all var(--transition-fast);
+}
+
+.navbar.scrolled .mobile-toggle span {
+    background-color: var(--text-main);
 }
 
 /* --- 2. Hero Section --- */
