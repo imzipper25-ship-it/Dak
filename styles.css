@@ -769,7 +769,7 @@ ul {
     line-height: 1.45;
 }
 
-/* --- 5. Блок Como Funciona --- */
+/* --- 5. Блок Como Funciona (3 Steps Cards with Uniform Images) --- */
 .como-funciona {
     background-color: var(--bg-secondary);
 }
@@ -804,13 +804,13 @@ ul {
 .step-card {
     background: var(--bg-primary);
     border-radius: var(--radius-card);
-    padding: 36px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: var(--shadow-subtle);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     min-height: 380px;
+    overflow: hidden;
 }
 
 .step-card:hover {
@@ -818,69 +818,56 @@ ul {
     box-shadow: var(--shadow-float);
 }
 
-.step-card-featured {
-    padding: 0;
-    overflow: hidden;
-}
-
 .step-img-container {
     position: relative;
-    height: 220px;
+    height: 200px;
     width: 100%;
+    overflow: hidden;
 }
 
 .step-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-card:hover .step-img {
+    transform: scale(1.05);
 }
 
 .step-number-badge {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    background: var(--dak-orange);
+    top: 18px;
+    left: 18px;
+    background: var(--dak-navy);
     color: var(--text-white);
     font-family: var(--font-heading);
-    font-weight: 800;
+    font-weight: 900;
     font-size: 0.95rem;
     padding: 8px 16px;
     border-radius: var(--radius-pill);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-.step-card-featured .step-content {
+/* Step Number Badge Color Change ONLY on Hover */
+.step-card:hover .step-number-badge {
+    background: var(--dak-orange);
+    color: #ffffff;
+}
+
+.step-content {
     padding: 32px;
-}
-
-.step-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.step-number {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: var(--dak-navy);
-    line-height: 1;
-}
-
-.step-icon-badge {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #fff4ea;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--dak-orange);
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
 }
 
 .step-title {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: -0.5px;
     margin-bottom: 12px;
@@ -977,8 +964,14 @@ ul {
     color: var(--text-white-muted);
 }
 
+/* Phone Number Link & Contacts Hover Behavior (Changes color ONLY on hover!) */
+.footer-contacts a {
+    color: var(--text-white-muted);
+    transition: color var(--transition-fast);
+}
+
 .footer-contacts a:hover {
-    color: var(--dak-orange);
+    color: var(--dak-orange) !important; /* Highlights ONLY on Hover */
 }
 
 .footer-text {
