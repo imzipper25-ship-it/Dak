@@ -339,23 +339,23 @@
             <form id="leadForm" class="modal-form">
                 <div class="form-group">
                     <label for="name" data-i18n="modal_label_name">Nome completo</label>
-                    <input type="text" id="name" required placeholder="Ex: João Silva" data-i18n-placeholder="modal_placeholder_name">
+                    <input type="text" id="name" name="name" required placeholder="Ex: João Silva" data-i18n-placeholder="modal_placeholder_name">
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="phone" data-i18n="modal_label_phone">Telemóvel</label>
-                        <input type="tel" id="phone" required placeholder="+351 9xx xxx xxx">
+                        <input type="tel" id="phone" name="phone" required placeholder="+351 9xx xxx xxx">
                     </div>
                     <div class="form-group">
                         <label for="email" data-i18n="modal_label_email">E-mail</label>
-                        <input type="email" id="email" required placeholder="joao@exemplo.pt">
+                        <input type="email" id="email" name="email" required placeholder="joao@exemplo.pt">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="serviceType" data-i18n="modal_label_service">Tipo de Obra</label>
-                    <select id="serviceType" required>
+                    <select id="serviceType" name="serviceType" required>
                         <option value="" data-i18n="modal_opt_select">Selecione uma opção...</option>
                         <option value="raiz" data-i18n="modal_opt_raiz">Construção de Raiz (Moradia / Edifício)</option>
                         <option value="remodelacao" data-i18n="modal_opt_remodelacao">Remodelação Integral</option>
@@ -366,7 +366,7 @@
 
                 <div class="form-group">
                     <label for="notes" data-i18n="modal_label_notes">Descrição breve do projeto (opcional)</label>
-                    <textarea id="notes" rows="3" placeholder="Local da obra, área aproximada em m², prazos..." data-i18n-placeholder="modal_placeholder_notes"></textarea>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Local da obra, área aproximada em m², prazos..." data-i18n-placeholder="modal_placeholder_notes"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-pill btn-black btn-block" id="modalSubmitBtn">
