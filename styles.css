@@ -176,6 +176,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .header-right-actions {
@@ -267,12 +268,12 @@ ul {
 
 .lang-dropdown-menu {
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 12px);
     right: 0;
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid rgba(11, 19, 31, 0.1);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -282,7 +283,7 @@ ul {
     visibility: hidden;
     transform: translateY(-8px);
     transition: all var(--transition-fast);
-    z-index: 1050;
+    z-index: 2100;
 }
 
 .lang-dropdown-menu.active {
@@ -1182,7 +1183,7 @@ ul {
     margin: 0 auto 20px auto;
 }
 
-/* --- Responsive Media Queries --- */
+/* --- Responsive Media Queries (Mobile Clean Overlay Fix) --- */
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -1216,12 +1217,48 @@ ul {
         grid-template-columns: 1fr;
     }
 
-    .nav-menu {
-        display: none;
+    /* Mobile Header Layout: Logo on Left, Globe + Burger on Right */
+    .header-right-actions {
+        gap: 10px;
+    }
+
+    .lang-dropdown-btn {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+    }
+
+    #headerCta {
+        display: none; /* Hide header CTA button on small phones to keep header super clean */
     }
 
     .mobile-toggle {
         display: flex;
+    }
+
+    /* Mobile Dropdown Nav Menu: Positioned strictly BELOW the white header bar so it NEVER covers the logo */
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.mobile-active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Placed strictly below the header bar! */
+        left: 16px;
+        right: 16px;
+        background: #ffffff;
+        padding: 24px;
+        border-radius: 20px;
+        border: 1px solid rgba(11, 19, 31, 0.1);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        margin-top: 8px;
+        z-index: 1000;
+    }
+
+    .nav-menu.mobile-active .nav-link {
+        font-size: 1.1rem;
+        padding: 10px 0;
     }
 
     .card-with-photo {

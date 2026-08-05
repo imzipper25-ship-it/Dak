@@ -458,26 +458,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Mobile Menu Toggle
+    // 5. Mobile Menu Toggle (Clean Dropdown below Header)
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
 
     if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-            const isFlex = navMenu.style.display === 'flex';
-            if (isFlex) {
-                navMenu.style.display = '';
-            } else {
-                navMenu.style.display = 'flex';
-                navMenu.style.flexDirection = 'column';
-                navMenu.style.position = 'absolute';
-                navMenu.style.top = '70px';
-                navMenu.style.left = '24px';
-                navMenu.style.right = '24px';
-                navMenu.style.background = '#ffffff';
-                navMenu.style.padding = '24px';
-                navMenu.style.borderRadius = '20px';
-                navMenu.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.toggle('mobile-active');
+        });
+
+        // Close mobile nav menu when a nav link is clicked
+        const mobileNavLinks = navMenu.querySelectorAll('.nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('mobile-active');
+            });
+        });
+
+        // Close mobile nav menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                navMenu.classList.remove('mobile-active');
             }
         });
     }
