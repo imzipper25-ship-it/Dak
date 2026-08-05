@@ -1,4 +1,4 @@
-// DAK Construction Landing Page JavaScript & i18n Translation Engine (CEO Level Copywriting & Globe Dropdown)
+// DAK Construction Landing Page JavaScript & i18n Translation Engine (Client-Facing High-Converting Copy)
 
 const translations = {
     pt: {
@@ -37,8 +37,8 @@ const translations = {
         servicos_card2_title: "Remodelações Integrais de Luxo",
         servicos_card2_text: "Renovação completa de apartamentos e moradias de alto padrão com detalhe nos acabamentos de interiores.",
         como_badge: "✦ O NOSSO MÉTODO",
-        como_title: "Dramaturga de projeto em 3 etapas claras",
-        como_intro: "Processo estruturado para garantir total tranquilidade ao proprietário do início ao fim.",
+        como_title: "Como transformamos a sua ideia em realidade",
+        como_intro: "Um processo simples e transparente em 3 etapas para garantir a entrega da sua obra sem qualquer dor de cabeça.",
         step1_title: "01. CONSULTA & AVALIAÇÃO TÉCNICA",
         step1_desc: "Inspeção do local, análise do projeto de arquitetura e levantamento de necessidades reais.",
         step2_title: "02. PLANO DE CUSTOS TRANSPARENTE",
@@ -112,8 +112,8 @@ const translations = {
         servicos_card2_title: "Full High-End Renovations",
         servicos_card2_text: "Complete renovation of luxury villas, apartments, and heritage spaces with maximum finishing precision.",
         como_badge: "✦ OUR METHOD",
-        como_title: "Structured 3-step project drama",
-        como_intro: "A transparent workflow designed to grant complete peace of mind to the property owner.",
+        como_title: "How we turn your vision into reality",
+        como_intro: "A simple and transparent 3-step process engineered to deliver your project hassle-free.",
         step1_title: "01. CONSULTATION & SITE AUDIT",
         step1_desc: "Site inspection, architectural drawing audit, and detailed scope analysis.",
         step2_title: "02. TRANSPARENT BUDGET PLAN",
@@ -187,8 +187,8 @@ const translations = {
         servicos_card2_title: "Капитальный премиум-ремонт",
         servicos_card2_text: "Полная реконструкция вилл, квартир и коммерческих пространств с высочайшей точностью отделки.",
         como_badge: "✦ НАШ МЕТОД",
-        como_title: "Драматургия проекта в 3 понятных шага",
-        como_intro: "Структурированный процесс, гарантирующий полное спокойствие заказчику на каждом этапе.",
+        como_title: "Как мы превращаем вашу идею в реальность",
+        como_intro: "Простой и прозрачный процесс в 3 этапа, гарантирующий сдачу объекта без головной боли.",
         step1_title: "01. ПЕРВИЧНЫЙ ИНЖЕНЕРНЫЙ АУДИТ",
         step1_desc: "Выезд на объект, анализ архитектурного проекта и составление технического задания.",
         step2_title: "02. ПРОЗРАЧНЫЙ РАСЧЁТ СМЕТЫ",
