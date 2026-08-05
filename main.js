@@ -56,7 +56,7 @@ const translations = {
         footer_copyright: "© 2026 DAK Construction. Todos os direitos reservados.",
         modal_badge: "✦ PEDIDO DE ORÇAMENTO DAK",
         modal_title: "Vamos falar sobre o seu projeto",
-        modal_sub: "Preencha os dados e entraremos em contacto em menos de 24h com uma estimativa inicial.",
+        modal_sub: "Preencha os dados e escolha como prefere enviar a sua mensagem.",
         modal_label_name: "Nome completo",
         modal_placeholder_name: "Ex: João Silva",
         modal_label_phone: "Telemóvel",
@@ -69,9 +69,11 @@ const translations = {
         modal_opt_comercial: "Espaço Comercial",
         modal_label_notes: "Descrição breve do projeto (opcional)",
         modal_placeholder_notes: "Local da obra, área aproximada em m², prazos...",
-        modal_btn_submit: "Enviar Pedido via WhatsApp →",
+        modal_btn_whatsapp: "Enviar via WhatsApp",
+        modal_btn_email: "Enviar por E-mail",
+        modal_call_text: "Ou ligue diretamente:",
         modal_success_title: "Obrigado pelo seu contacto!",
-        modal_success_desc: "A mensagem foi encaminhada para o nosso WhatsApp. Responderemos em breve!",
+        modal_success_desc: "A sua mensagem foi enviada com sucesso. Entraremos em contacto muito em breve!",
         modal_success_close: "Fechar"
     },
     en: {
@@ -129,7 +131,7 @@ const translations = {
         footer_copyright: "© 2026 DAK Construction. All rights reserved.",
         modal_badge: "✦ DAK QUOTE REQUEST",
         modal_title: "Let's discuss your project",
-        modal_sub: "Fill in the details and we'll contact you within 24 hours with an initial estimate.",
+        modal_sub: "Fill in the details and choose your preferred contact method.",
         modal_label_name: "Full Name",
         modal_placeholder_name: "e.g. John Smith",
         modal_label_phone: "Phone Number",
@@ -142,9 +144,11 @@ const translations = {
         modal_opt_comercial: "Commercial Space",
         modal_label_notes: "Brief project description (optional)",
         modal_placeholder_notes: "Location, approximate area in m², deadlines...",
-        modal_btn_submit: "Send Quote via WhatsApp →",
+        modal_btn_whatsapp: "Send via WhatsApp",
+        modal_btn_email: "Send via Email",
+        modal_call_text: "Or call directly:",
         modal_success_title: "Thank you for reaching out!",
-        modal_success_desc: "Your request has been forwarded to our WhatsApp. We will reply shortly!",
+        modal_success_desc: "Your message has been sent successfully. We will get in touch shortly!",
         modal_success_close: "Close"
     },
     ru: {
@@ -202,7 +206,7 @@ const translations = {
         footer_copyright: "© 2026 DAK Construction. Все права защищены.",
         modal_badge: "✦ ЗАПРОС СМЕТЫ DAK",
         modal_title: "Обсудим ваш проект",
-        modal_sub: "Заполните форму, и мы свяжемся с вами в течение 24 часов с первичным расчётом.",
+        modal_sub: "Заполните форму и выберите удобный способ связи.",
         modal_label_name: "Ваше имя",
         modal_placeholder_name: "Например: Иван Иванов",
         modal_label_phone: "Телефон",
@@ -215,9 +219,11 @@ const translations = {
         modal_opt_comercial: "Коммерческое помещение",
         modal_label_notes: "Краткое описание проекта (опционально)",
         modal_placeholder_notes: "Локация объекта, примерная площадь в м², желаемые сроки...",
-        modal_btn_submit: "Отправить через WhatsApp →",
+        modal_btn_whatsapp: "Отправить в WhatsApp",
+        modal_btn_email: "Отправить по E-mail",
+        modal_call_text: "Или позвоните напрямую:",
         modal_success_title: "Спасибо за обращение!",
-        modal_success_desc: "Заявка сформирована и перенаправлена в ваш WhatsApp!",
+        modal_success_desc: "Ваше сообщение успешно сформировано. Мы свяжемся с вами в самое ближайшее время!",
         modal_success_close: "Закрыть"
     }
 };
@@ -300,13 +306,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setLanguage(currentLang);
 
-    // 4. Lead Modal Handling & Direct WhatsApp Integration (+351 931 312 136)
+    // 4. Lead Modal Handling & Dual Contact Submission Engine (WhatsApp & Email)
     const modalBackdrop = document.getElementById('modalBackdrop');
     const modalClose = document.getElementById('modalClose');
     const openModalBtns = document.querySelectorAll('.open-modal-btn');
     const leadForm = document.getElementById('leadForm');
     const formSuccessMsg = document.getElementById('formSuccessMsg');
     const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+    const btnSubmitWhatsapp = document.getElementById('btnSubmitWhatsapp');
+    const btnSubmitEmail = document.getElementById('btnSubmitEmail');
 
     const openModal = () => {
         modalBackdrop.classList.add('active');
@@ -345,21 +353,28 @@ document.addEventListener('DOMContentLoaded', () => {
         closeSuccessBtn.addEventListener('click', closeModal);
     }
 
-    // Direct WhatsApp Submission Engine
-    if (leadForm) {
-        leadForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+    // Helper to get form data
+    const getLeadData = () => {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const serviceSelect = document.getElementById('serviceType');
+        const serviceText = serviceSelect.value ? serviceSelect.options[serviceSelect.selectedIndex].text : '';
+        const notes = document.getElementById('notes').value.trim();
+        return { name, phone, email, serviceText, notes };
+    };
 
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const serviceSelect = document.getElementById('serviceType');
-            const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
-            const notes = document.getElementById('notes').value.trim();
+    // Action 1: Send via WhatsApp
+    if (btnSubmitWhatsapp && leadForm) {
+        btnSubmitWhatsapp.addEventListener('click', () => {
+            if (!leadForm.checkValidity()) {
+                leadForm.reportValidity();
+                return;
+            }
 
-            const targetPhoneNumber = "351931312136"; // DAK WhatsApp Number
+            const { name, phone, email, serviceText, notes } = getLeadData();
+            const targetPhoneNumber = "351931312136";
 
-            // Format WhatsApp Message
             let message = `✦ *NOVO PEDIDO DE ORÇAMENTO — DAK CONSTRUCTION*\n\n`;
             message += `👤 *Nome:* ${name}\n`;
             message += `📞 *Telemóvel:* ${phone}\n`;
@@ -369,13 +384,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 message += `📝 *Descrição:* ${notes}\n`;
             }
 
-            // Generate WhatsApp URL
             const whatsappUrl = `https://wa.me/${targetPhoneNumber}?text=${encodeURIComponent(message)}`;
-
-            // Open WhatsApp in new tab/app
             window.open(whatsappUrl, '_blank');
 
-            // Show success screen in modal
+            leadForm.style.display = 'none';
+            if (formSuccessMsg) {
+                formSuccessMsg.classList.add('active');
+            }
+        });
+    }
+
+    // Action 2: Send via Email (Web3Forms API or Direct Mailto Fallback)
+    if (btnSubmitEmail && leadForm) {
+        btnSubmitEmail.addEventListener('click', async () => {
+            if (!leadForm.checkValidity()) {
+                leadForm.reportValidity();
+                return;
+            }
+
+            const { name, phone, email, serviceText, notes } = getLeadData();
+            const web3FormsKey = window.WEB3FORMS_KEY || null;
+
+            if (web3FormsKey) {
+                const formData = new FormData(leadForm);
+                formData.append("access_key", web3FormsKey);
+                formData.append("subject", "✦ Novo Pedido de Orçamento — DAK Construction");
+                formData.append("from_name", "DAK Construction Website");
+
+                try {
+                    await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
+                    });
+                } catch (err) {
+                    console.error(err);
+                }
+            } else {
+                // Direct Mailto fallback if Web3Forms key is not configured
+                const subject = encodeURIComponent("✦ Novo Pedido de Orçamento — DAK Construction");
+                const body = encodeURIComponent(`Nome: ${name}\nTelemóvel: ${phone}\nE-mail: ${email}\nTipo de Obra: ${serviceText}\nDescrição: ${notes}`);
+                window.location.href = `mailto:dakconstructionportugal@gmail.com?subject=${subject}&body=${body}`;
+            }
+
             leadForm.style.display = 'none';
             if (formSuccessMsg) {
                 formSuccessMsg.classList.add('active');

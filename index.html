@@ -33,7 +33,7 @@
                 <a href="#como-funciona" class="nav-link" data-i18n="nav_how">Como Funciona</a>
                 <a href="#servicos" class="nav-link" data-i18n="nav_services">Serviços</a>
                 
-                <!-- Mobile Language Switcher (Visible inside burger menu on mobile) -->
+                <!-- Mobile Language Switcher -->
                 <div class="lang-switcher mobile-lang-switcher">
                     <button class="lang-btn active" data-lang="pt">PT</button>
                     <button class="lang-btn" data-lang="en">EN</button>
@@ -334,14 +334,14 @@
         </div>
     </footer>
 
-    <!-- Interactive Lead Form Modal -->
+    <!-- Interactive Lead Form Modal with Dual Submission (WhatsApp & Email Options) -->
     <div class="modal-backdrop" id="modalBackdrop">
         <div class="modal-card">
             <button class="modal-close" id="modalClose">&times;</button>
             <div class="modal-header">
                 <span class="section-badge" data-i18n="modal_badge">✦ PEDIDO DE ORÇAMENTO DAK</span>
                 <h3 data-i18n="modal_title">Vamos falar sobre o seu projeto</h3>
-                <p data-i18n="modal_sub">Preencha os dados e entraremos em contacto em menos de 24h com uma estimativa inicial.</p>
+                <p data-i18n="modal_sub">Preencha os dados e escolha como prefere enviar a sua mensagem.</p>
             </div>
 
             <form id="leadForm" class="modal-form">
@@ -377,15 +377,30 @@
                     <textarea id="notes" name="notes" rows="3" placeholder="Local da obra, área aproximada em m², prazos..." data-i18n-placeholder="modal_placeholder_notes"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-pill btn-black btn-block" id="modalSubmitBtn">
-                    <span data-i18n="modal_btn_submit">Enviar Pedido via WhatsApp →</span>
-                </button>
+                <!-- Dual Action Buttons: WhatsApp & Email -->
+                <div class="modal-submit-buttons">
+                    <button type="button" class="btn btn-pill btn-whatsapp" id="btnSubmitWhatsapp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.146 4.185 4.39-1.149z"/></svg>
+                        <span data-i18n="modal_btn_whatsapp">Enviar via WhatsApp</span>
+                    </button>
+                    
+                    <button type="button" class="btn btn-pill btn-black" id="btnSubmitEmail">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <span data-i18n="modal_btn_email">Enviar por E-mail</span>
+                    </button>
+                </div>
+
+                <!-- Direct Call Option -->
+                <div class="modal-direct-call">
+                    <span data-i18n="modal_call_text">Ou ligue diretamente:</span>
+                    <a href="tel:+351931312136" class="direct-phone-tag">+351 931 312 136</a>
+                </div>
             </form>
 
             <div class="form-success-msg" id="formSuccessMsg">
                 <div class="success-icon">✓</div>
                 <h4 data-i18n="modal_success_title">Obrigado pelo seu contacto!</h4>
-                <p data-i18n="modal_success_desc">A mensagem foi encaminhada para o nosso WhatsApp. Responderemos em breve!</p>
+                <p data-i18n="modal_success_desc">A sua mensagem foi enviada com sucesso. Entraremos em contacto muito em breve!</p>
                 <button class="btn btn-pill btn-black" id="closeSuccessBtn" data-i18n="modal_success_close">Fechar</button>
             </div>
         </div>
