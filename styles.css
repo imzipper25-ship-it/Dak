@@ -78,7 +78,7 @@ ul {
     padding: 0 24px;
 }
 
-/* --- Buttons & Pills (DAK Inter Style) --- */
+/* --- Buttons & Pills --- */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -87,7 +87,7 @@ ul {
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.95rem;
-    padding: 16px 32px;
+    padding: 14px 28px;
     border-radius: var(--radius-pill);
     border: 1px solid transparent;
     cursor: pointer;
@@ -126,7 +126,6 @@ ul {
     box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
 }
 
-/* WhatsApp Green Button Style */
 .btn-whatsapp {
     background-color: #25D366;
     color: #ffffff;
@@ -139,7 +138,7 @@ ul {
 }
 
 .btn-lg {
-    padding: 20px 40px;
+    padding: 18px 36px;
     font-size: 1.05rem;
 }
 
@@ -157,23 +156,20 @@ ul {
     margin-bottom: 16px;
 }
 
-/* --- Navbar Header --- */
+/* --- Clean White Navbar Header (Fixed & Crisp from start) --- */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 18px 0;
-    transition: all var(--transition-smooth);
-}
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95);
+    padding: 14px 0;
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: 12px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(11, 19, 31, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-smooth);
 }
 
 .navbar-container {
@@ -188,110 +184,39 @@ ul {
     gap: 16px;
 }
 
-/* Desktop & Mobile Language Switchers */
-.mobile-lang-switcher {
-    display: none;
-}
-
-.desktop-lang-switcher {
-    display: flex;
-}
-
-.lang-switcher {
-    align-items: center;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: var(--radius-pill);
-    padding: 3px;
-    gap: 2px;
-    backdrop-filter: blur(12px);
-    transition: all var(--transition-smooth);
-}
-
-.navbar.scrolled .desktop-lang-switcher {
-    background: rgba(11, 19, 31, 0.06);
-    border-color: rgba(11, 19, 31, 0.1);
-}
-
-.lang-btn {
-    background: none;
-    border: none;
-    padding: 6px 12px;
-    border-radius: var(--radius-pill);
-    font-family: var(--font-body);
-    font-weight: 800;
-    font-size: 0.78rem;
-    color: var(--text-white);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.navbar.scrolled .desktop-lang-switcher .lang-btn {
-    color: var(--text-main);
-}
-
-.lang-btn:hover {
-    opacity: 0.85;
-}
-
-.lang-btn.active {
-    background: var(--dak-orange) !important;
-    color: #ffffff !important;
-    box-shadow: 0 2px 8px rgba(245, 130, 32, 0.4);
-}
-
+/* Original Navy Blue DAK Logo (No Invert Filter) */
 .logo-brand {
     display: flex;
     align-items: center;
 }
 
-/* Dynamic Logo Color: White on dark Hero, Dark Navy when scrolled */
 .logo-img {
-    height: 44px;
+    height: 42px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1); /* Pure white logo initially */
-    transition: filter var(--transition-smooth);
-}
-
-.navbar.scrolled .logo-img {
-    filter: none; /* Original dark navy logo when header turns white */
+    filter: none !important;
 }
 
 .logo-img-footer {
     height: 48px;
-    filter: brightness(0) invert(1); /* Always white on dark footer */
+    filter: brightness(0) invert(1) !important; /* White on dark footer */
 }
 
-/* Header Nav Menu: Light text on Hero, Dark text when scrolled */
+/* Header Nav Menu: Dark Navy text from the start */
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 36px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(16px);
-    padding: 8px 28px;
-    border-radius: var(--radius-pill);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all var(--transition-smooth);
-}
-
-.navbar.scrolled .nav-menu {
+    gap: 32px;
     background: transparent;
-    border-color: transparent;
     padding: 0;
 }
 
 .nav-link {
     font-size: 0.92rem;
     font-weight: 600;
-    color: var(--text-white);
+    color: var(--text-main);
     transition: color var(--transition-fast);
     position: relative;
-}
-
-.navbar.scrolled .nav-link {
-    color: var(--text-main);
 }
 
 .nav-link:hover, .nav-link.active {
@@ -313,9 +238,39 @@ ul {
     width: 100%;
 }
 
-.navbar.scrolled #headerCta {
-    background-color: var(--dak-navy);
-    color: var(--text-white);
+/* Language Switcher Pill inside Menu / Header */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    background: rgba(11, 19, 31, 0.06);
+    border: 1px solid rgba(11, 19, 31, 0.1);
+    border-radius: var(--radius-pill);
+    padding: 3px;
+    gap: 2px;
+    transition: all var(--transition-smooth);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.78rem;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.lang-btn:hover {
+    opacity: 0.85;
+}
+
+.lang-btn.active {
+    background: var(--dak-orange) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(245, 130, 32, 0.4);
 }
 
 .mobile-toggle {
@@ -332,12 +287,8 @@ ul {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--text-white);
-    transition: all var(--transition-fast);
-}
-
-.navbar.scrolled .mobile-toggle span {
     background-color: var(--text-main);
+    transition: all var(--transition-fast);
 }
 
 /* --- 2. Hero Section --- */
@@ -346,7 +297,7 @@ ul {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 130px;
+    padding-top: 120px;
     padding-bottom: 90px;
     overflow: hidden;
 }
