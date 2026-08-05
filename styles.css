@@ -156,7 +156,7 @@ ul {
     margin-bottom: 16px;
 }
 
-/* --- Clean White Navbar Header (Fixed & Crisp from start) --- */
+/* --- Clean White Navbar Header --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -185,7 +185,6 @@ ul {
     gap: 16px;
 }
 
-/* Original Navy Blue DAK Logo */
 .logo-brand {
     display: flex;
     align-items: center;
@@ -1007,7 +1006,7 @@ ul {
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* --- Interactive Lead Modal Dual Submit Buttons & Direct Call --- */
+/* --- Interactive Lead Modal --- */
 .modal-backdrop {
     position: fixed;
     top: 0;
@@ -1133,12 +1132,11 @@ ul {
     background: #ffffff;
 }
 
-/* Modal Submit Buttons Layout */
 .modal-submit-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-top: 6px;
+    margin-top: 8px;
 }
 
 .modal-submit-buttons .btn {
@@ -1194,6 +1192,241 @@ ul {
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px auto;
+}
+
+/* --- PVA Personal Virtual Assistant AI Chatbot Widget Styles --- */
+.pva-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2500;
+}
+
+/* Floating Action Button (FAB) */
+.pva-fab {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--dak-navy);
+    border: 2px solid var(--dak-orange);
+    box-shadow: 0 8px 32px rgba(11, 19, 31, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all var(--transition-fast);
+}
+
+.pva-fab:hover {
+    transform: scale(1.08) rotate(5deg);
+    box-shadow: 0 12px 36px rgba(11, 19, 31, 0.4);
+}
+
+.pva-fab-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pva-fab-avatar img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+.pva-fab-badge {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent-green);
+    border: 2px solid var(--dak-navy);
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    box-shadow: 0 0 8px var(--accent-green);
+}
+
+/* Chat Widget Panel */
+.pva-widget {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 360px;
+    max-height: 520px;
+    height: 75vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(11, 19, 31, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(11, 19, 31, 0.22);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2500;
+}
+
+.pva-widget.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.pva-header {
+    background: var(--dak-navy);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.pva-header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pva-header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--dak-orange);
+    background: #ffffff;
+}
+
+.pva-header-info h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+}
+
+.pva-status {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+}
+
+.pva-close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.pva-close-btn:hover {
+    opacity: 1;
+}
+
+/* Chat Body area */
+.pva-body {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pva-message {
+    max-width: 80%;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+.pva-message-bot {
+    background: var(--bg-secondary);
+    color: var(--text-main);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.pva-message-user {
+    background: var(--dak-navy);
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+/* Chat Footer area for options */
+.pva-footer {
+    padding: 16px;
+    background: rgba(11, 19, 31, 0.02);
+    border-top: 1px solid rgba(11, 19, 31, 0.08);
+}
+
+.pva-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pva-option-chip {
+    background: #ffffff;
+    border: 1px solid rgba(11, 19, 31, 0.12);
+    color: var(--dak-navy);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+}
+
+.pva-option-chip:hover {
+    background: #fff4ea;
+    border-color: var(--dak-orange);
+    color: var(--dak-orange);
+    transform: translateX(4px);
+}
+
+/* Typing Indicator Animation */
+.pva-typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 18px;
+}
+
+.pva-typing-indicator span {
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-muted);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pvaBounce 1.4s infinite both;
+}
+
+.pva-typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pva-typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pvaBounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
 }
 
 /* --- Responsive Media Queries --- */
@@ -1291,6 +1524,18 @@ ul {
 
     .footer-main {
         grid-template-columns: 1fr;
+    }
+
+    /* PVA Mobile Adjustment */
+    .pva-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .pva-widget {
+        width: calc(100vw - 40px);
+        right: 0;
+        bottom: 70px;
     }
 }
 

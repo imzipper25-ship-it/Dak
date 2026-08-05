@@ -1,0 +1,22 @@
+{
+  "name": "DAK Construction",
+  "short_name": "DAK",
+  "description": "Engenharia civil, construção de raiz e remodelações de alta precisão em Portugal.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0B131F",
+  "theme_color": "#0B131F",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "public/images/dak_mascot.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "public/images/dak_mascot.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
