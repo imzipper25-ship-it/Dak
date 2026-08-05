@@ -3,14 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAK Construction — Construção & Remodelação em Portugal</title>
-    <meta name="description" content="DAK Construction: A sua obra do zero ao acabamento com transparência total, rigor técnico e modelo à jorna em Portugal.">
+    <title>DAK Construction — Engenharia & Construção Civil em Portugal</title>
+    <meta name="description" content="DAK Construction: Gestão técnica de obras e remodelações integrais em Lisboa e Porto. Transparência total de custos, rigor de engenharia e modelo à jorna.">
     
-    <!-- Open Graph & Structured Data for SEO -->
-    <meta property="og:title" content="DAK Construction — Engenharia & Construção em Portugal">
-    <meta property="og:description" content="Construção de raiz e remodelações integrais em Lisboa e Porto. Transparência total de custos e rigor técnico.">
+    <!-- Open Graph & Meta Tags for Social & Organic Search -->
+    <meta property="og:title" content="DAK Construction — Engenharia & Construção Civil em Portugal">
+    <meta property="og:description" content="Gestão técnica de obras e remodelações integrais em Lisboa e Porto. Transparência total de custos e rigor de engenharia.">
     <meta property="og:image" content="public/images/hero_bg.png">
-    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_PT">
+
+    <!-- Schema.org JSON-LD Structured Data for Organic Google Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ConstructionBusiness",
+      "name": "DAK Construction",
+      "image": "public/images/dak_logo.png",
+      "telephone": "+351931312136",
+      "email": "dakconstructionportugal@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lisboa",
+        "addressCountry": "PT"
+      },
+      "areaServed": ["Lisboa", "Porto", "Cascais", "Algarve"],
+      "priceRange": "$$$",
+      "description": "Engenharia civil, construção de raiz e remodelações integrais de luxo com modelo de custos transparentes em Portugal."
+    }
+    </script>
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,9 +51,9 @@
 
             <nav class="nav-menu" id="navMenu">
                 <a href="#hero" class="nav-link active" data-i18n="nav_home">Início</a>
-                <a href="#beneficios" class="nav-link" data-i18n="nav_benefits">Benefícios</a>
-                <a href="#como-funciona" class="nav-link" data-i18n="nav_how">Como Funciona</a>
-                <a href="#servicos" class="nav-link" data-i18n="nav_services">Serviços</a>
+                <a href="#beneficios" class="nav-link" data-i18n="nav_benefits">Porquê a DAK</a>
+                <a href="#como-funciona" class="nav-link" data-i18n="nav_how">O Nosso Método</a>
+                <a href="#servicos" class="nav-link" data-i18n="nav_services">Especialidades</a>
                 
                 <!-- Mobile Language Switcher -->
                 <div class="lang-switcher mobile-lang-switcher">
@@ -50,7 +72,7 @@
                 </div>
 
                 <button class="btn btn-pill btn-black open-modal-btn" id="headerCta">
-                    <span data-i18n="cta_quote">Pedir Orçamento</span> <span class="arrow">→</span>
+                    <span data-i18n="cta_quote">Pedir Avaliação Grátis</span> <span class="arrow">→</span>
                 </button>
             </div>
 
@@ -70,16 +92,16 @@
 
         <div class="container hero-content">
             <div class="hero-text-block">
-                <div class="hero-tag" data-i18n="hero_tag">✦ DAK CONSTRUCTION PORTUGAL</div>
-                <h1 class="hero-title" data-i18n="hero_title">CONSTRUÍMOS COM TRANSPARÊNCIA</h1>
+                <div class="hero-tag" data-i18n="hero_tag">✦ ENGENHARIA & CONSTRUÇÃO CIVIL EM PORTUGAL</div>
+                <h1 class="hero-title" data-i18n="hero_title">CONSTRUÍMOS COM RIGOR & TRANSPARÊNCIA TOTAL</h1>
                 <p class="hero-subtitle" data-i18n="hero_subtitle">
-                    A sua obra do zero ao acabamento. Gestão completa, sem dor de cabeça e com a qualidade que você merece.
+                    Gestão técnica de obras do zero ao acabamento de luxo. Sem custos ocultos, sem aditamentos surpresa e com controlo diário de custos.
                 </p>
                 <div class="hero-actions">
                     <button class="btn btn-pill btn-white open-modal-btn">
-                        <span data-i18n="hero_cta">Solicitar Orçamento Grátis</span> <span class="arrow">→</span>
+                        <span data-i18n="hero_cta">Solicitar Estimativa Grátis</span> <span class="arrow">→</span>
                     </button>
-                    <a href="#beneficios" class="hero-secondary-link" data-i18n="hero_secondary">Saber mais sobre o modelo à jorna</a>
+                    <a href="#beneficios" class="hero-secondary-link" data-i18n="hero_secondary">Como funciona o modelo à jorna?</a>
                 </div>
             </div>
 
@@ -91,8 +113,8 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                     </div>
                     <div class="card-info">
-                        <span class="card-title" data-i18n="card_transparent_title">100% Transparente</span>
-                        <span class="card-sub" data-i18n="card_transparent_sub">Preços reais & sem custos ocultos</span>
+                        <span class="card-title" data-i18n="card_transparent_title">0 Aditamentos Surpresa</span>
+                        <span class="card-sub" data-i18n="card_transparent_sub">Custos reais de materiais e mão de obra</span>
                     </div>
                 </div>
 
@@ -100,7 +122,7 @@
                 <div class="glass-card card-engineer">
                     <img src="public/images/dak_mascot.png" alt="Equipa DAK Construction" class="avatar-mascot" loading="lazy">
                     <div class="card-info">
-                        <span class="card-title" data-i18n="card_team_title">Equipa Especializada</span>
+                        <span class="card-title" data-i18n="card_team_title">Engenharia Especializada</span>
                         <span class="card-sub" data-i18n="card_team_sub">DAK Construction Specialists</span>
                     </div>
                     <div class="status-dot" title="Disponível para novos projetos"></div>
@@ -109,21 +131,21 @@
         </div>
     </section>
 
-    <!-- 3. Блок Benefícios -->
+    <!-- 3. Блок Benefícios (Porquê a DAK) -->
     <section class="section beneficios" id="beneficios">
         <div class="container">
             <div class="beneficios-grid">
                 <div class="beneficios-header-col">
-                    <span class="section-badge" data-i18n="beneficios_badge">✦ PORQUÊ NÓS</span>
+                    <span class="section-badge" data-i18n="beneficios_badge">✦ DIFERENCIAÇÃO NO MERCADO</span>
                     <h2 class="section-headline-lg" data-i18n="beneficios_headline">
-                        A sua obra pode custar menos do que imagina. Acreditamos que a transparência é a base de qualquer projeto de sucesso.
+                        Eliminamos a opacidade da construção tradicional. O seu projeto gerido com precisão de engenharia.
                     </h2>
                     <p class="section-description" data-i18n="beneficios_desc">
-                        Não inflacionamos orçamentos com custos ocultos. O nosso modelo de trabalho é simples: trabalhamos por turnos (à jorna), otimizamos o tempo da equipa e garantimos que paga apenas pelo trabalho real executado.
+                        A maioria das empreitadas inflaciona orçamentos com margens desproporcionais e custos imprevisíveis. Na DAK Construction, trabalhamos por turnos otimizados (à jorna), com relatórios diários de materiais e mão de obra real.
                     </p>
                     <div class="action-wrap">
                         <button class="btn btn-pill btn-black open-modal-btn">
-                            <span data-i18n="beneficios_btn">Falar com a equipa</span> <span class="arrow">→</span>
+                            <span data-i18n="beneficios_btn">Falar com Engenheiro DAK</span> <span class="arrow">→</span>
                         </button>
                     </div>
                 </div>
@@ -135,24 +157,24 @@
                             <img src="public/images/concrete_work.png" alt="Processo de construção DAK" class="metric-img" loading="lazy">
                         </div>
                         <div class="metric-content">
-                            <div class="metric-tag" data-i18n="metric1_tag">Gestão Real DAK</div>
-                            <h3 class="metric-title" data-i18n="metric1_title">Orçamento Justo</h3>
-                            <p class="metric-text" data-i18n="metric1_text">Sem margens desproporcionais. Relatórios claros de materiais e horas de trabalho.</p>
+                            <div class="metric-tag" data-i18n="metric1_tag">Gestão Transparente DAK</div>
+                            <h3 class="metric-title" data-i18n="metric1_title">Orçamento de Custo Real</h3>
+                            <p class="metric-text" data-i18n="metric1_text">Relatórios claros de materiais comprados a preço de custo e horas de trabalho efetivas.</p>
                         </div>
                     </div>
 
-                    <!-- Card 2: 0 Surpresas (High contrast dark card) -->
+                    <!-- Card 2: 100% Controlo (High contrast dark card) -->
                     <div class="metric-card card-dark">
                         <div class="metric-number">01</div>
                         <div class="metric-content">
-                            <div class="badge-pill" data-i18n="metric2_badge">Garantia DAK</div>
-                            <h3 class="metric-title" data-i18n="metric2_title">0 Surpresas</h3>
-                            <p class="metric-text" data-i18n="metric2_text">Paga o justo pelo trabalho executado. Cronograma rigoroso cumprido à risca.</p>
+                            <div class="badge-pill" data-i18n="metric2_badge">Garantia de Execução DAK</div>
+                            <h3 class="metric-title" data-i18n="metric2_title">100% Controlo de Prazos</h3>
+                            <p class="metric-text" data-i18n="metric2_text">Cronograma rigoroso com penalizações por atraso e supervisão técnica diária.</p>
                         </div>
                         <div class="card-footer-stats">
                             <div class="stat-item">
                                 <span class="stat-val" data-i18n="metric2_stat1_val">+120</span>
-                                <span class="stat-lbl" data-i18n="metric2_stat1_lbl">Obras Concluídas</span>
+                                <span class="stat-lbl" data-i18n="metric2_stat1_lbl">Obras Entregues</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-val" data-i18n="metric2_stat2_val">100%</span>
@@ -165,17 +187,17 @@
         </div>
     </section>
 
-    <!-- 4. Блок Serviços e Qualidade -->
+    <!-- 4. Блок Serviços e Qualidade (Especialidades) -->
     <section class="section servicos" id="servicos">
         <div class="container">
             <div class="section-intro">
-                <span class="section-badge" data-i18n="servicos_badge">✦ A NOSSA EXPERIÊNCIA</span>
+                <span class="section-badge" data-i18n="servicos_badge">✦ AS NOSSAS ESPECIALIDADES</span>
                 <h2 class="section-title-main" data-i18n="servicos_title">
-                    Executamos todos os tipos de trabalhos na construção civil. Da fundação ao último detalhe de interior.
+                    Foco absoluto em projetos de elevado padrão. Da infraestrutura ao acabamento de alta precisão.
                 </h2>
             </div>
 
-            <!-- Showcase Banner with Neatly Positioned Cards -->
+            <!-- Showcase Banner -->
             <div class="showcase-banner">
                 <img src="public/images/services_interior.png" alt="Acabamento de luxo DAK Construction" class="showcase-img" loading="lazy">
                 <div class="showcase-gradient-overlay"></div>
@@ -188,8 +210,8 @@
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         </div>
                         <div class="service-card-info">
-                            <h3 data-i18n="servicos_card1_title">Construção de Raiz</h3>
-                            <p data-i18n="servicos_card1_text">Projetos residenciais e comerciais do terreno até à chave na mão com acompanhamento técnico contínuo.</p>
+                            <h3 data-i18n="servicos_card1_title">Construção de Raiz (Chave na Mão)</h3>
+                            <p data-i18n="servicos_card1_text">Moradias unifamiliares e edifícios do terreno à entrega das chaves com fiscalização de engenharia contínua.</p>
                         </div>
                     </div>
 
@@ -199,8 +221,8 @@
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-1-1 4 4M3 21l9-9m0 0 4-4m-4 4 4 4m-8 0 4-4"/><path d="M15 5l4 4"/></svg>
                         </div>
                         <div class="service-card-info">
-                            <h3 data-i18n="servicos_card2_title">Remodelações</h3>
-                            <p data-i18n="servicos_card2_text">Renovação integral de moradias, apartamentos e espaços comerciais com máxima precisão nos acabamentos.</p>
+                            <h3 data-i18n="servicos_card2_title">Remodelações Integrais de Luxo</h3>
+                            <p data-i18n="servicos_card2_text">Renovação completa de apartamentos e moradias de alto padrão com detalhe nos acabamentos de interiores.</p>
                         </div>
                     </div>
                 </div>
@@ -208,16 +230,16 @@
         </div>
     </section>
 
-    <!-- 5. Блок Como Funciona (3 Steps Cards with Uniform Images) -->
+    <!-- 5. Блок Como Funciona (O Nosso Método) -->
     <section class="section como-funciona" id="como-funciona">
         <div class="container">
             <div class="process-header">
                 <div>
-                    <span class="section-badge" data-i18n="como_badge">✦ COMO FUNCIONA</span>
-                    <h2 class="section-title" data-i18n="como_title">O nosso método em 3 passos transparentes</h2>
+                    <span class="section-badge" data-i18n="como_badge">✦ O NOSSO MÉTODO</span>
+                    <h2 class="section-title" data-i18n="como_title">Dramaturga de projeto em 3 etapas claras</h2>
                 </div>
                 <p class="process-intro-text" data-i18n="como_intro">
-                    Entregamos um processo completo, desde o planeamento até à entrega das chaves.
+                    Processo estruturado para garantir total tranquilidade ao proprietário do início ao fim.
                 </p>
             </div>
 
@@ -229,9 +251,9 @@
                         <span class="step-number-badge">01</span>
                     </div>
                     <div class="step-content">
-                        <h3 class="step-title" data-i18n="step1_title">CONSULTA INICIAL</h3>
+                        <h3 class="step-title" data-i18n="step1_title">01. CONSULTA & AVALIAÇÃO TÉCNICA</h3>
                         <p class="step-desc" data-i18n="step1_desc">
-                            Analisamos as suas necessidades e o local para entender a dimensão do projeto.
+                            Inspeção do local, análise do projeto de arquitetura e levantamento de necessidades reais.
                         </p>
                     </div>
                 </div>
@@ -243,9 +265,9 @@
                         <span class="step-number-badge">02</span>
                     </div>
                     <div class="step-content">
-                        <h3 class="step-title" data-i18n="step2_title">ORÇAMENTO TRANSPARENTE</h3>
+                        <h3 class="step-title" data-i18n="step2_title">02. PLANO DE CUSTOS TRANSPARENTE</h3>
                         <p class="step-desc" data-i18n="step2_desc">
-                            Apresentamos os custos reais dos materiais e da mão de obra (por turnos/à jorna).
+                            Apresentação da estimativa discriminada de materiais e equipas alocadas por turnos (à jorna).
                         </p>
                     </div>
                 </div>
@@ -257,9 +279,9 @@
                         <span class="step-number-badge">03</span>
                     </div>
                     <div class="step-content">
-                        <h3 class="step-title" data-i18n="step3_title">EXECUÇÃO E ENTREGA</h3>
+                        <h3 class="step-title" data-i18n="step3_title">03. EXECUÇÃO & ENTREGA DA CHAVE</h3>
                         <p class="step-desc" data-i18n="step3_desc">
-                            Construímos com rigor técnico e entregamos a obra pronta para uso.
+                            Construção sob rigoroso controlo de qualidade e entrega do imóvel pronto a habitar.
                         </p>
                     </div>
                 </div>
@@ -272,11 +294,11 @@
         <div class="container">
             <div class="footer-cta-box">
                 <div class="footer-cta-content">
-                    <h2 class="footer-cta-title" data-i18n="footer_cta_title">Pronto para começar a sua obra?</h2>
-                    <p class="footer-cta-sub" data-i18n="footer_cta_sub">Peça a sua avaliação gratuita hoje e receba uma estimativa sem qualquer compromisso.</p>
+                    <h2 class="footer-cta-title" data-i18n="footer_cta_title">Pronto para executar a sua obra sem surpresas?</h2>
+                    <p class="footer-cta-sub" data-i18n="footer_cta_sub">Solicite hoje uma consulta técnica e receba uma estimativa transparente sem qualquer compromisso.</p>
                 </div>
                 <button class="btn btn-pill btn-white btn-lg open-modal-btn">
-                    <span data-i18n="footer_cta_btn">Pedir Orçamento Grátis</span> <span class="arrow">→</span>
+                    <span data-i18n="footer_cta_btn">Pedir Avaliação Grátis</span> <span class="arrow">→</span>
                 </button>
             </div>
 
@@ -286,7 +308,7 @@
                         <img src="public/images/dak_logo.png" alt="DAK Construction Logo" class="logo-img logo-img-footer" loading="lazy">
                     </a>
                     <p class="footer-brand-desc" data-i18n="footer_brand_desc">
-                        DAK Construction — Construção civil e remodelações de alta precisão em Portugal. Transparência técnica, rigor e compromisso com o cliente.
+                        DAK Construction — Engenharia civil e remodelações de alta precisão em Portugal. Transparência técnica, rigor e compromisso com o cliente.
                     </p>
                 </div>
 
@@ -294,9 +316,9 @@
                     <h4 class="footer-col-title" data-i18n="footer_nav_title">Navegação</h4>
                     <ul class="footer-links">
                         <li><a href="#hero" data-i18n="nav_home">Início</a></li>
-                        <li><a href="#beneficios" data-i18n="nav_benefits">Benefícios</a></li>
-                        <li><a href="#servicos" data-i18n="nav_services">Serviços</a></li>
-                        <li><a href="#como-funciona" data-i18n="nav_how">Como Funciona</a></li>
+                        <li><a href="#beneficios" data-i18n="nav_benefits">Porquê a DAK</a></li>
+                        <li><a href="#servicos" data-i18n="nav_services">Especialidades</a></li>
+                        <li><a href="#como-funciona" data-i18n="nav_how">O Nosso Método</a></li>
                     </ul>
                 </div>
 
@@ -339,9 +361,9 @@
         <div class="modal-card">
             <button class="modal-close" id="modalClose">&times;</button>
             <div class="modal-header">
-                <span class="section-badge" data-i18n="modal_badge">✦ PEDIDO DE ORÇAMENTO DAK</span>
-                <h3 data-i18n="modal_title">Vamos falar sobre o seu projeto</h3>
-                <p data-i18n="modal_sub">Preencha os dados e escolha como prefere enviar a sua mensagem.</p>
+                <span class="section-badge" data-i18n="modal_badge">✦ AVALIAÇÃO DE PROJETO DAK</span>
+                <h3 data-i18n="modal_title">Vamos analisar a sua obra</h3>
+                <p data-i18n="modal_sub">Preencha os dados abaixo e o nosso engenheiro entrará em contacto em menos de 24h.</p>
             </div>
 
             <form id="leadForm" class="modal-form">
@@ -366,41 +388,41 @@
                     <select id="serviceType" name="serviceType" required>
                         <option value="" data-i18n="modal_opt_select">Selecione uma opção...</option>
                         <option value="raiz" data-i18n="modal_opt_raiz">Construção de Raiz (Moradia / Edifício)</option>
-                        <option value="remodelacao" data-i18n="modal_opt_remodelacao">Remodelação Integral</option>
+                        <option value="remodelacao" data-i18n="modal_opt_remodelacao">Remodelação Integral de Luxo</option>
                         <option value="parcial" data-i18n="modal_opt_parcial">Remodelação Parcial / Acabamentos</option>
-                        <option value="comercial" data-i18n="modal_opt_comercial">Espaço Comercial</option>
+                        <option value="comercial" data-i18n="modal_opt_comercial">Espaço Comercial / Escritório</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="notes" data-i18n="modal_label_notes">Descrição breve do projeto (opcional)</label>
-                    <textarea id="notes" name="notes" rows="3" placeholder="Local da obra, área aproximada em m², prazos..." data-i18n-placeholder="modal_placeholder_notes"></textarea>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Local da obra, área aproximada em m², prazos pretendidos..." data-i18n-placeholder="modal_placeholder_notes"></textarea>
                 </div>
 
                 <!-- Dual Action Buttons: WhatsApp & Email -->
                 <div class="modal-submit-buttons">
                     <button type="button" class="btn btn-pill btn-whatsapp" id="btnSubmitWhatsapp">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.146 4.185 4.39-1.149z"/></svg>
-                        <span data-i18n="modal_btn_whatsapp">Enviar via WhatsApp</span>
+                        <span data-i18n="modal_btn_whatsapp">Enviar via WhatsApp 🟢</span>
                     </button>
                     
                     <button type="button" class="btn btn-pill btn-black" id="btnSubmitEmail">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                        <span data-i18n="modal_btn_email">Enviar por E-mail</span>
+                        <span data-i18n="modal_btn_email">Enviar por E-mail ✉️</span>
                     </button>
                 </div>
 
                 <!-- Direct Call Option -->
                 <div class="modal-direct-call">
-                    <span data-i18n="modal_call_text">Ou ligue diretamente:</span>
+                    <span data-i18n="modal_call_text">Ou ligue diretamente para o engenheiro:</span>
                     <a href="tel:+351931312136" class="direct-phone-tag">+351 931 312 136</a>
                 </div>
             </form>
 
             <div class="form-success-msg" id="formSuccessMsg">
                 <div class="success-icon">✓</div>
-                <h4 data-i18n="modal_success_title">Obrigado pelo seu contacto!</h4>
-                <p data-i18n="modal_success_desc">A sua mensagem foi enviada com sucesso. Entraremos em contacto muito em breve!</p>
+                <h4 data-i18n="modal_success_title">Obrigado pelo contacto!</h4>
+                <p data-i18n="modal_success_desc">O seu pedido foi registado com sucesso. Entraremos em contacto em menos de 24h!</p>
                 <button class="btn btn-pill btn-black" id="closeSuccessBtn" data-i18n="modal_success_close">Fechar</button>
             </div>
         </div>
