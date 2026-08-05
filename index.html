@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAK Construction — Construção & Remodelação em Portugal</title>
-    <meta name="description" content="DAK Construction: A sua obra do zero ao acabamento. Gestão completa, sem dor de cabeça e com transparência total de custos em Portugal.">
+    <meta name="description" content="DAK Construction: A sua obra do zero ao acabamento com transparência total, rigor técnico e modelo à jorna em Portugal.">
+    
+    <!-- Open Graph & Structured Data for SEO -->
+    <meta property="og:title" content="DAK Construction — Engenharia & Construção em Portugal">
+    <meta property="og:description" content="Construção de raiz e remodelações integrais em Lisboa e Porto. Transparência total de custos e rigor técnico.">
+    <meta property="og:image" content="public/images/hero_bg.png">
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,11 +32,18 @@
                 <a href="#beneficios" class="nav-link" data-i18n="nav_benefits">Benefícios</a>
                 <a href="#como-funciona" class="nav-link" data-i18n="nav_how">Como Funciona</a>
                 <a href="#servicos" class="nav-link" data-i18n="nav_services">Serviços</a>
+                
+                <!-- Mobile Language Switcher (Visible inside burger menu on mobile) -->
+                <div class="lang-switcher mobile-lang-switcher">
+                    <button class="lang-btn active" data-lang="pt">PT</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
             </nav>
 
             <div class="header-right-actions">
-                <!-- Language Switcher Pill -->
-                <div class="lang-switcher" id="langSwitcher">
+                <!-- Desktop Language Switcher Pill -->
+                <div class="lang-switcher desktop-lang-switcher" id="langSwitcher">
                     <button class="lang-btn active" data-lang="pt">PT</button>
                     <button class="lang-btn" data-lang="en">EN</button>
                     <button class="lang-btn" data-lang="ru">RU</button>
@@ -52,7 +64,7 @@
     <!-- 2. Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-bg-wrapper">
-            <img src="public/images/hero_bg.png" alt="Construção civil DAK Construction em Portugal" class="hero-bg-img">
+            <img src="public/images/hero_bg.png" alt="Construção civil DAK Construction em Portugal" class="hero-bg-img" loading="eager">
             <div class="hero-overlay"></div>
         </div>
 
@@ -86,7 +98,7 @@
 
                 <!-- Floating Card 2 with DAK Mascot Avatar -->
                 <div class="glass-card card-engineer">
-                    <img src="public/images/dak_mascot.png" alt="Equipa DAK Construction" class="avatar-mascot">
+                    <img src="public/images/dak_mascot.png" alt="Equipa DAK Construction" class="avatar-mascot" loading="lazy">
                     <div class="card-info">
                         <span class="card-title" data-i18n="card_team_title">Equipa Especializada</span>
                         <span class="card-sub" data-i18n="card_team_sub">DAK Construction Specialists</span>
@@ -120,7 +132,7 @@
                     <!-- Card 1: Orçamento Justo with Photo -->
                     <div class="metric-card card-with-photo">
                         <div class="metric-photo-wrap">
-                            <img src="public/images/concrete_work.png" alt="Processo de construção DAK" class="metric-img">
+                            <img src="public/images/concrete_work.png" alt="Processo de construção DAK" class="metric-img" loading="lazy">
                         </div>
                         <div class="metric-content">
                             <div class="metric-tag" data-i18n="metric1_tag">Gestão Real DAK</div>
@@ -165,7 +177,7 @@
 
             <!-- Showcase Banner with Neatly Positioned Cards -->
             <div class="showcase-banner">
-                <img src="public/images/services_interior.png" alt="Acabamento de luxo DAK Construction" class="showcase-img">
+                <img src="public/images/services_interior.png" alt="Acabamento de luxo DAK Construction" class="showcase-img" loading="lazy">
                 <div class="showcase-gradient-overlay"></div>
 
                 <!-- Neatly Arranged Overlay Cards Grid -->
@@ -196,7 +208,7 @@
         </div>
     </section>
 
-    <!-- 5. Блок Como Funciona (3 Steps with Uniform Images) -->
+    <!-- 5. Блок Como Funciona (3 Steps Cards with Uniform Images) -->
     <section class="section como-funciona" id="como-funciona">
         <div class="container">
             <div class="process-header">
@@ -210,10 +222,10 @@
             </div>
 
             <div class="steps-grid">
-                <!-- Step 01 (With Image) -->
+                <!-- Step 01 -->
                 <div class="step-card step-card-featured">
                     <div class="step-img-container">
-                        <img src="public/images/step_meeting.png" alt="Consulta inicial DAK Construction" class="step-img">
+                        <img src="public/images/step_meeting.png" alt="Consulta inicial DAK Construction" class="step-img" loading="lazy">
                         <span class="step-number-badge">01</span>
                     </div>
                     <div class="step-content">
@@ -224,10 +236,10 @@
                     </div>
                 </div>
 
-                <!-- Step 02 (With Image) -->
+                <!-- Step 02 -->
                 <div class="step-card step-card-featured">
                     <div class="step-img-container">
-                        <img src="public/images/step_budget.png" alt="Orçamento transparente DAK Construction" class="step-img">
+                        <img src="public/images/step_budget.png" alt="Orçamento transparente DAK Construction" class="step-img" loading="lazy">
                         <span class="step-number-badge">02</span>
                     </div>
                     <div class="step-content">
@@ -238,10 +250,10 @@
                     </div>
                 </div>
 
-                <!-- Step 03 (With Image) -->
+                <!-- Step 03 -->
                 <div class="step-card step-card-featured">
                     <div class="step-img-container">
-                        <img src="public/images/step_handover.png" alt="Execução e entrega DAK Construction" class="step-img">
+                        <img src="public/images/step_handover.png" alt="Execução e entrega DAK Construction" class="step-img" loading="lazy">
                         <span class="step-number-badge">03</span>
                     </div>
                     <div class="step-content">
@@ -271,7 +283,7 @@
             <div class="footer-main">
                 <div class="footer-col brand-col">
                     <a href="#" class="logo-brand footer-logo-wrap">
-                        <img src="public/images/dak_logo.png" alt="DAK Construction Logo" class="logo-img logo-img-footer">
+                        <img src="public/images/dak_logo.png" alt="DAK Construction Logo" class="logo-img logo-img-footer" loading="lazy">
                     </a>
                     <p class="footer-brand-desc" data-i18n="footer_brand_desc">
                         DAK Construction — Construção civil e remodelações de alta precisão em Portugal. Transparência técnica, rigor e compromisso com o cliente.
