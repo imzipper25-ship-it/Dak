@@ -184,7 +184,7 @@ ul {
     gap: 16px;
 }
 
-/* Original Navy Blue DAK Logo (No Invert Filter) */
+/* Original Navy Blue DAK Logo */
 .logo-brand {
     display: flex;
     align-items: center;
@@ -199,10 +199,10 @@ ul {
 
 .logo-img-footer {
     height: 48px;
-    filter: brightness(0) invert(1) !important; /* White on dark footer */
+    filter: brightness(0) invert(1) !important;
 }
 
-/* Header Nav Menu: Dark Navy text from the start */
+/* Header Nav Menu: Dark Navy text from start */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -238,39 +238,89 @@ ul {
     width: 100%;
 }
 
-/* Language Switcher Pill inside Menu / Header */
-.lang-switcher {
-    display: flex;
-    align-items: center;
-    background: rgba(11, 19, 31, 0.06);
-    border: 1px solid rgba(11, 19, 31, 0.1);
-    border-radius: var(--radius-pill);
-    padding: 3px;
-    gap: 2px;
-    transition: all var(--transition-smooth);
+/* Sleek Globe / Burger Language Dropdown Component */
+.lang-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
-.lang-btn {
-    background: none;
-    border: none;
-    padding: 6px 12px;
+.lang-dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(11, 19, 31, 0.05);
+    border: 1px solid rgba(11, 19, 31, 0.12);
     border-radius: var(--radius-pill);
+    padding: 8px 16px;
     font-family: var(--font-body);
-    font-weight: 800;
-    font-size: 0.78rem;
-    color: var(--text-main);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--dak-navy);
     cursor: pointer;
     transition: all var(--transition-fast);
 }
 
-.lang-btn:hover {
-    opacity: 0.85;
+.lang-dropdown-btn:hover {
+    background: rgba(11, 19, 31, 0.1);
+    border-color: rgba(11, 19, 31, 0.2);
 }
 
-.lang-btn.active {
-    background: var(--dak-orange) !important;
-    color: #ffffff !important;
-    box-shadow: 0 2px 8px rgba(245, 130, 32, 0.4);
+.lang-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(11, 19, 31, 0.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 170px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all var(--transition-fast);
+    z-index: 1050;
+}
+
+.lang-dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    text-align: left;
+}
+
+.lang-option-btn:hover {
+    background: var(--bg-secondary);
+}
+
+.lang-option-btn.active {
+    background: #fff4ea;
+    color: var(--dak-orange);
+    font-weight: 800;
+}
+
+.flag-icon {
+    font-size: 1.1rem;
 }
 
 .mobile-toggle {
@@ -390,7 +440,7 @@ ul {
     opacity: 0.85;
 }
 
-/* Floating Cards Grid on Hero (Neatly Structured & Aligned) */
+/* Floating Cards Grid on Hero */
 .hero-floating-wrapper {
     display: flex;
     flex-direction: column;
@@ -1162,25 +1212,6 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .desktop-lang-switcher {
-        display: none;
-    }
-
-    .mobile-lang-switcher {
-        display: flex;
-        margin-top: 20px;
-        background: rgba(11, 19, 31, 0.06);
-        border: 1px solid rgba(11, 19, 31, 0.1);
-        justify-content: center;
-        width: 100%;
-    }
-
-    .mobile-lang-switcher .lang-btn {
-        color: var(--text-main);
-        flex: 1;
-        text-align: center;
-    }
-
     .modal-submit-buttons {
         grid-template-columns: 1fr;
     }
